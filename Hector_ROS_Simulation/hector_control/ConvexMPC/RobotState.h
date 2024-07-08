@@ -16,7 +16,7 @@ class RobotState
         void print();
         Matrix<fpt,3,1> p,v,w;
         Matrix<fpt,3,2> r_feet;
-        Matrix<fpt,3,3> R;
+        Matrix<fpt,3,3> R;  // rotation matrix representation of quaternion q
         Matrix<fpt,3,3> R_yaw;
         Matrix<fpt,3,3> I_body;
         Quaternionf q;

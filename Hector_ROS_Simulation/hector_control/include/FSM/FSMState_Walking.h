@@ -4,7 +4,7 @@
 #include "FSMState.h"
 #include "../../ConvexMPC/ConvexMPCLocomotion.h"
 
-class FSMState_Walking: public FSMState
+class FSMState_Walking: public FSMState  // iniherit from FSMState 
 {
     public:
         FSMState_Walking(ControlFSMData *data);

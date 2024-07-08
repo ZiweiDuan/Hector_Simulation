@@ -17,6 +17,7 @@ Use of this source code is governed by the MPL-2.0 license, see LICENSE.
 
 int mode = 1; // pulsed mode or continuous mode
 
+// TODO: move declaration in header file 
 class teleForceCmd
 {
 public:
@@ -35,7 +36,7 @@ teleForceCmd::teleForceCmd()
     Fx = 0;
     Fy = 0;
     Fz = 0;
-    force_pub = n.advertise<geometry_msgs::Wrench>("/apply_force/trunk", 20);
+    force_pub = n.advertise<geometry_msgs::Wrench>("/apply_force/trunk", 20);  // n is a NodeHandle
     sleep(1);
     pubForce(Fx, Fy, Fz);
 }

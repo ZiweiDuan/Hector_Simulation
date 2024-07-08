@@ -10,12 +10,12 @@ void RobotState::set(flt* p_, flt* v_, flt* q_, flt* w_, flt* r_,flt yaw_)
 {
     for(u8 i = 0; i < 3; i++)
     {
-        this->p(i) = p_[i];
-        this->v(i) = v_[i];
-        this->w(i) = w_[i];
+        this->p(i) = p_[i];  // position 
+        this->v(i) = v_[i];  // velocity
+        this->w(i) = w_[i];  // angular velocity
     }
-    this->q.w() = q_[0];
-    this->q.x() = q_[1];
+    this->q.w() = q_[0];   // quaternion (orientation + 3 rotations)
+    this->q.x() = q_[1];   
     this->q.y() = q_[2];
     this->q.z() = q_[3];
     this->yaw = yaw;
@@ -23,9 +23,9 @@ void RobotState::set(flt* p_, flt* v_, flt* q_, flt* w_, flt* r_,flt yaw_)
     //for(u8 i = 0; i < 12; i++)
     //    this->r_feet(i) = r[i];
     for(u8 rs = 0; rs < 3; rs++)
-        for(u8 c = 0; c < 2; c++){
+        for(u8 c = 0; c < 2; c++){  // 2 legs
         // std::cout<< "r_ : " << rs << ", "<< c << ": " << r_[rs*2 + c] <<std::endl;
-        this->r_feet(rs,c) = r_[rs*2 + c];
+        this->r_feet(rs,c) = r_[rs*2 + c];  
         }   
     R = this->q.toRotationMatrix();
     fpt yc = cos(yaw_);
