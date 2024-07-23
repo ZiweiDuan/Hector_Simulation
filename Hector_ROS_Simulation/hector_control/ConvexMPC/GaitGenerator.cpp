@@ -108,6 +108,8 @@ int *Gait::mpc_gait()
 // Update iteration and phase based on the given values.
 void Gait::setIterations(int iterationsPerMPC, int currentIteration)
 {
-  _iteration = (currentIteration / iterationsPerMPC) % _nIterations;
+  _iteration = (currentIteration / iterationsPerMPC) % _nIterations;   
+  // division: computes how many complete MPC cycles have occurred up to currentIteration; 
+  // modulo: ensures _iteration remains within [0, _nIterations-1] bounds, and wraps around if necessary.
   _phase = (double)(currentIteration % (iterationsPerMPC * _nIterations)) / (double)(iterationsPerMPC * _nIterations);
 }

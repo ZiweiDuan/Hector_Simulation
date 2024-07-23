@@ -81,8 +81,9 @@ struct StateEstimatorData {
  */ 
 class GenericEstimator{
   public:
-    virtual void run() = 0;
+    virtual void run() = 0;  
     virtual void setup() = 0;
+    // Declaring pure virtual functions makes GenericEstimator an abstract class, meaning it cannot be instantiated directly. Only derived classes that implement these functions can be instantiated.
 
     void setData(StateEstimatorData data) {_stateEstimatorData = data;};
 

@@ -1,3 +1,6 @@
 [submodule "HECTOR_Foot_step_planner"]
 	path = HECTOR_Foot_step_planner
 	url = https://github.com/DRCL-USC/HECTOR_Foot_step_planner.git
+[submodule "Hector_ROS_Simulation/ocs2"]
+	path = Hector_ROS_Simulation/ocs2
+	url = https://github.com/leggedrobotics/ocs2.git

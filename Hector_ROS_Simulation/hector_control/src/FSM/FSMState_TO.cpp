@@ -29,12 +29,7 @@ void FSMState_TO::run()
     _data->_legController->updateData(_data->_lowState);
     _data->_stateEstimator->run(); 
     _userValue = _data->_lowState->userValue;
-
-    // Implement the trajectory logic and update the desired state commands here
-    // Extract the trajectory at the current time
-
-    // Set the desired state commands
-
+    
     _data->_legController->updateCommand(_data->_lowCmd);  
     counter++;
 }
@@ -99,7 +94,11 @@ Eigen::MatrixXd FSMState_TO::readDataFromFile(const std::string& filePath) {
 }
 
 
+/* 
+Purpose: read pre-defined trajectory from a .txt file to run the trajectory online  
+*/
 void FSMState_TO::extractTrajectory(const Eigen::MatrixXd& fullTrajectory, Eigen::VectorXd& currentTrajectory, double time, double dataFrequency) {
+
 
     int index = static_cast<int>(floor(time * dataFrequency/1000.0));
     
@@ -111,3 +110,8 @@ void FSMState_TO::extractTrajectory(const Eigen::MatrixXd& fullTrajectory, Eigen
     }
     currentTrajectory = fullTrajectory.row(index).transpose();
 }
+
+
+/*
+FSMState_TO::subscribe
+*/

@@ -13,7 +13,7 @@ ConvexMPCLocomotion::ConvexMPCLocomotion(double _dt, int _iterations_between_mpc
  iterationsBetweenMPC(_iterations_between_mpc),
  horizonLength(10),
  dt(_dt),
- walking(horizonLength, Vec2<int>(0, 5), Vec2<int>(5, 5), "Walking"),
+ walking(horizonLength, Vec2<int>(0, 5), Vec2<int>(5, 5), "Walking"),  // nMPC_segments, offsets, durations, name 
  standing(horizonLength, Vec2<int>(0, 0), Vec2<int>(10, 10), "Standing")
 {
   gaitNumber = 1;

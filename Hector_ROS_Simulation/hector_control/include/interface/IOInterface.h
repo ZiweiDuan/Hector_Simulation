@@ -43,7 +43,11 @@ class IOInterface
     public:
         IOInterface(){}
         ~IOInterface(){}
-        virtual void sendRecv(const LowlevelCmd *cmd, LowlevelState *state) = 0;
+        virtual void sendRecv(const LowlevelCmd *cmd, LowlevelState *state) = 0;  
+        // virtual functions allow derived classes to override this function to provide specific implementations.
+        // The = 0; at the end of the declaration specifies that this is a pure virtual function.
+        // This means that the function does not have an implementation in the base class and must be implemented by any derived class.
+
         void zeroCmdPanel(){cmdPanel->setZero();}
         void setPassive(){cmdPanel->setPassive();}
         CmdPanel *cmdPanel;

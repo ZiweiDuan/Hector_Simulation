@@ -9,7 +9,7 @@ inline void RosShutDown(int sig){
 	ros::shutdown();
 }
 
-CheatIO::CheatIO(std::string robot_name):IOInterface(), _subSpinner(1)
+CheatIO::CheatIO(std::string robot_name):IOInterface(), _subSpinner(1)  // first initialize the base class that CheatIO inherits from, 
 {
     // int argc; char **argv;
     // ros::init(argc, argv, "unitree_gazebo_servo");
